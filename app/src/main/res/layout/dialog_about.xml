@@ -26,6 +26,7 @@
 			android:textColor="@color/color_CC000000"
             android:textSize="@dimen/ts_22" />
     </LinearLayout>
+
     <TextView
         android:layout_width="@dimen/vs_600"
         android:layout_height="wrap_content"
