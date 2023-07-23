@@ -200,9 +200,9 @@ public class LivePlayActivity extends BaseActivity {
     @Override
     protected void init() {
         context = this;
-        epgStringAddress = Hawk.get(HawkConfig.EPG_URL,"");
+        epgStringAddress = Hawk.get(HawkConfig.EPG_URL,"https://epg.112114.xyz/");
         if(epgStringAddress == null || epgStringAddress.length()<5)
-            epgStringAddress = "http://epg.51zmt.top:8000/api/diyp/";
+            epgStringAddress = "https://315600.xyz/epg.php/";
 
         setLoadSir(findViewById(R.id.live_root));
         mVideoView = findViewById(R.id.mVideoView);
@@ -595,6 +595,7 @@ public class LivePlayActivity extends BaseActivity {
 
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
+		//遥控器键盘按键事件
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
             int keyCode = event.getKeyCode();
             if (keyCode == KeyEvent.KEYCODE_MENU) {
@@ -781,6 +782,7 @@ public class LivePlayActivity extends BaseActivity {
         channel_Name = currentLiveChannelItem;
         isSHIYI=false;
         isBack = false;
+		//只有url包含pltv/8888才会显示时移功能
         if(currentLiveChannelItem.getUrl().indexOf("PLTV/8888") !=-1){
             currentLiveChannelItem.setinclude_back(true);
         }else {
